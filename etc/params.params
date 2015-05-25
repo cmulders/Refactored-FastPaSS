@@ -1,0 +1,106 @@
+# Options for both SpectraST and FastPaSS
+
+# Spectral library to be searched against - required if not specified on command-line with -sL option - replace with your own
+libraryFile = ./zf_test_20120830.splib
+
+# A database file to be included in .pepXML outputs for downstream TPP processing - replace with your own
+databaseFile = /media/Data/XTandem Parameters/Databases/141216-Danio_Rerio-uniprot.fasta
+# The type of the database: "AA" = amino acid database; "DNA" = nucleotide database 
+databaseType = AA 
+
+# Selected List File Name - specify a file containing spectrum query names to be searched
+filterSelectedListFileName =
+
+# Whether to keep all accessed library entries in memory 
+indexCacheAll = false 
+
+# Precursor m/z tolerance 
+precursorMzTolerance = 3.0 
+
+# Whether to use average mass instead of monoisotopic mass
+precursorMzUseAverage = false
+
+# Detect homologous/identical hits to the top hit up to this specified rank 
+#CHANGED 4 -> 1
+detectHomologs = 1
+
+
+# Output file format: pepXML or xml (pepXML format), txt (fixed-width text), or xls (tab-delimited text) 
+outputExtension = pep.xml 
+
+# Output directory: where to put the output files. Defaults to the same directory as the search data file.
+outputDirectory = ""
+
+useSp4Scoring = true
+
+usePValue = false
+
+# use tierwise open modifications search
+useTierwiseOpenModSearch = false
+
+# Top hits will only be displayed if its F-value is greater than this specified value 
+hitListTopHitFvalThreshold = 0.03
+
+# Lower hits will only be displayed if its F-value is greater than this specified value 
+hitListLowerHitsFvalThreshold = 0.45 
+
+# Regardless of F-value, homologous/identical lower hits to the top hit will be displayed 
+hitListShowHomologs = true
+
+# Do not display lower hits no matter what 
+hitListShowMaxRank = 1 
+
+# Do not display the query if it is not searched or if even its top hit does not score higher than hitListTopHitFvalThreshold 
+hitListExcludeNoMatch = true
+
+# print fingerprinting summary to file specified by string. Empty string = not performing fingerprinting
+printFingerprintingSummary = ""
+	
+#the enzyme to use for outputting to PepXML, and for calculating NTT and NMC (WON'T AFFECT WHAT CANDIDATES ARE SEARCHED!)
+enzymeForPepXMLOutput = ""
+
+# Ignore spectra for which there are less than this many "signficant" peaks 
+filterMinPeakCount = 10
+
+# Remove all but the top X peaks
+filterMaxPeaksUsed = 150
+
+# Remove all peaks smaller than 1/X of the most intense peak
+filterMaxDynamicRange = 1000.0
+
+# Only peaks with intensity greated than this threshold will be counted as "significant" 
+filterCountPeakIntensityThreshold = 2.01 
+
+# Peaks with intensity smaller than this threshold will be deleted 
+filterRemovePeakIntensityThreshold = 2.01 
+
+filterMinMzRange = 350.0
+
+# Ignore spectra for which almost all intensities are below this specified m/z value 
+filterAllPeaksBelowMz = 520 
+
+# Ignore spectra for which all peaks are below this specified intensity
+filterMaxIntensityBelow = 0.0
+
+filterLibMaxPeaksUsed = 50
+
+filterTMTReporterPeaks = false
+
+filterITRAQReporterPeaks = false
+
+filterLightIonsMzThreshold = 180
+
+fvalFractionDelta = 0.4
+fvalUseDotBias = true
+
+# Scaling power for raw intensities 
+peakScalingMzPower = 0.0 
+peakScalingIntensityPower = 0.5 
+
+# Penalty for unassigned peaks 
+peakScalingUnassignedPeaks = 1.0
+
+# Binning 
+peakBinningNumBinsPerMzUnit = 1 
+peakBinningFractionToNeighbor = 0.5 
+peakNoBinning = false
